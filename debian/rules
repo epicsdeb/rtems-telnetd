@@ -47,11 +47,12 @@ $(eval $(foreach arch,$(ARCH),$(foreach bsp,$($(arch)_BSPS),$(call build-bsp,$(b
 # $(2) is arch name (ie powerpc)
 define install-bsp
 
-$(2)_$(1)_BINDIR = $(CURDIR)/debian/rtems-telnetd-$(1)/usr/$(2)-rtems$(RV)/$(1)/bin
+$(2)_$(1)_INSTDIR = $(CURDIR)/debian/rtems-telnetd-$(1)/usr/$(2)-rtems$(RV)/$(1)
 
 install-$(2)-$(1):
-	install -m 755 -d $$($(2)_$(1)_BINDIR)
-	install -m 755 -t $$($(2)_$(1)_BINDIR) x-$(2)-$(1)/rtems.bin x-$(2)-$(1)/rtems.exe
+	install -d $$($(2)_$(1)_INSTDIR)/bin
+	$(MAKE) ARCH=x-$(2)-$(1) RTEMS_MAKEFILE_PATH=/usr/$(2)-rtems$(RV)/$(1) \
+RTEMS_SITE_INSTALLDIR=$$($(2)_$(1)_INSTDIR) install
 
 install-all += install-$(2)-$(1)
 
@@ -87,8 +88,7 @@ install-indep:
 	dh_installdirs -i
 
 	install -d debian/rtems-telnetd-doc/usr/share/rtems-telnetd
-	install -m 644 -t debian/rtems-telnetd-doc/usr/share/rtems-telnetd INSTALL LICENSE README*
-	install -m 644 -t debian/rtems-telnetd-doc/usr/share/rtems-telnetd st.sys*
+	install -m 644 -t debian/rtems-telnetd-doc/usr/share/rtems-telnetd LICENSE ChangeLog
 
 	dh_install -i
 
