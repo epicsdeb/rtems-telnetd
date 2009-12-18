@@ -1,0 +1,5 @@
+rtems-telnetd-pc386 binary: non-standard-dir-in-usr
+rtems-telnetd-pc386 binary: file-in-unusual-dir
+# Cross compile lives in usr/*/include an similar
+rtems-telnetd-pc386 binary: unstripped-binary-or-object
+# Host strip does not work for cross built ELF files

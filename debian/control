@@ -1,21 +1,19 @@
 Source: rtems-telnetd
-Section: unknown
+Section: devel
 Priority: extra
 Maintainer: Michael Davidsaver <mdavidsaver@bnl.gov>
-Build-Depends: debhelper (>= 7), rtems-cexp-mvme2100, rtems-cexp-mvme3100, rtems-cexp-mvme5500, rtems-cexp-pc386
-Standards-Version: 3.7.3
+Build-Depends: debhelper (>= 7), rtems-debhelper, cdbs,
+               rtems-cexp-mvme2100,
+               rtems-cexp-mvme3100,
+               rtems-cexp-mvme5500,
+               rtems-cexp-pc386
+Rtems-Depends: rtems, rtems-cexp
+Standards-Version: 3.8.0
 Homepage: http://www.slac.stanford.edu/~strauman/rtems/software.html
-
-Package: rtems-telnetd-doc
-Architecture: all
-Description: Telnet server for RTEMS
- A telnet service for RTEMS
- .
- This package contains documentation
 
 Package: rtems-telnetd-mvme2100
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, rtems-cexp-mvme2100
+Depends: ${rtems:Depends}
 Recommends: rtems-telnetd-doc
 Description: Telnet server for RTEMS
  A telnet service for RTEMS
@@ -24,7 +22,7 @@ Description: Telnet server for RTEMS
 
 Package: rtems-telnetd-mvme3100
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, rtems-cexp-mvme3100
+Depends: ${rtems:Depends}
 Recommends: rtems-telnetd-doc
 Description: Telnet server for RTEMS
  A telnet service for RTEMS
@@ -33,7 +31,7 @@ Description: Telnet server for RTEMS
 
 Package: rtems-telnetd-mvme5500
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, rtems-cexp-mvme5500
+Depends: ${rtems:Depends}
 Recommends: rtems-telnetd-doc
 Description: Telnet server for RTEMS
  A telnet service for RTEMS
@@ -42,7 +40,7 @@ Description: Telnet server for RTEMS
 
 Package: rtems-telnetd-pc386
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, rtems-cexp-pc386
+Depends: ${rtems:Depends}
 Recommends: rtems-telnetd-doc
 Description: Telnet server for RTEMS
  A telnet service for RTEMS
