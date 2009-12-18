@@ -14,7 +14,6 @@ Homepage: http://www.slac.stanford.edu/~strauman/rtems/software.html
 Package: rtems-telnetd-mvme2100
 Architecture: any
 Depends: ${rtems:Depends}
-Recommends: rtems-telnetd-doc
 Description: Telnet server for RTEMS
  A telnet service for RTEMS
  .
@@ -23,7 +22,6 @@ Description: Telnet server for RTEMS
 Package: rtems-telnetd-mvme3100
 Architecture: any
 Depends: ${rtems:Depends}
-Recommends: rtems-telnetd-doc
 Description: Telnet server for RTEMS
  A telnet service for RTEMS
  .
@@ -32,7 +30,6 @@ Description: Telnet server for RTEMS
 Package: rtems-telnetd-mvme5500
 Architecture: any
 Depends: ${rtems:Depends}
-Recommends: rtems-telnetd-doc
 Description: Telnet server for RTEMS
  A telnet service for RTEMS
  .
@@ -41,7 +38,6 @@ Description: Telnet server for RTEMS
 Package: rtems-telnetd-pc386
 Architecture: any
 Depends: ${rtems:Depends}
-Recommends: rtems-telnetd-doc
 Description: Telnet server for RTEMS
  A telnet service for RTEMS
  .
