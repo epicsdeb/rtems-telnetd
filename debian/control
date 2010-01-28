@@ -4,6 +4,7 @@ Priority: extra
 Maintainer: Michael Davidsaver <mdavidsaver@bnl.gov>
 Build-Depends: debhelper (>= 7), rtems-debhelper, cdbs,
                rtems-cexp-mvme2100,
+               rtems-cexp-mvme2307,
                rtems-cexp-mvme3100,
                rtems-cexp-mvme5500,
                rtems-cexp-pc386
@@ -18,6 +19,14 @@ Description: Telnet server for RTEMS
  A telnet service for RTEMS
  .
  This package contains the generic image for the MVME2100 SBC.
+
+Package: rtems-telnetd-mvme2307
+Architecture: any
+Depends: ${rtems:Depends}
+Description: Telnet server for RTEMS
+ A telnet service for RTEMS
+ .
+ This package contains the generic image for the MVME2307 SBC.
 
 Package: rtems-telnetd-mvme3100
 Architecture: any
