@@ -32,9 +32,9 @@ install
 
 endef
 
-$(foreach p,$(DEB_ARCH_PACKAGES),$(eval $(call bsprule,$(p:rtems-telnetd-%=%))))
+$(foreach p,$(DEB_INDEP_PACKAGES),$(eval $(call bsprule,$(p:rtems-telnetd-%=%))))
 
-common-binary-fixup-arch::
+common-binary-fixup-indep::
 	dh_rtems
 
 clean::
